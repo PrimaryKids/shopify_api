@@ -13,7 +13,7 @@ module ShopifyAPI
           Base.headers
         end
       end
-      @schema = ::GraphQL::Client.load_schema(@http)
+      #@schema = ::GraphQL::Client.load_schema(@http)
       @client = ::GraphQL::Client.new(schema: ::GraphQL::Schema.new, execute: @http)
     end
 
