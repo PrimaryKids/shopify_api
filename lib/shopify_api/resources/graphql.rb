@@ -14,7 +14,7 @@ module ShopifyAPI
         end
       end
       @schema = ::GraphQL::Client.load_schema(@http)
-      @client = ::GraphQL::Client.new(schema: @schema, execute: @http)
+      @client = ::GraphQL::Client.new(schema: ::GraphQL::Schema.new, execute: @http)
     end
 
     delegate :parse, :query, to: :@client
