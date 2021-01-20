@@ -7,7 +7,7 @@ module ShopifyAPI
   class GraphQL
     def initialize
       uri = Base.site.dup
-      uri.path = '/admin/api/graphql.json'
+      uri.path = '/admin/api/2020-10/graphql.json'
       @http = ::GraphQL::Client::HTTP.new(uri.to_s) do
         define_method(:headers) do |_context|
           Base.headers
